@@ -1,0 +1,19 @@
+[project]
+name = "sconewsbot"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12, <3.13"
+dependencies = [
+  "boilerpy3>=1.0.7",
+  "httpx>=0.28.1",
+  "newspaper4k>=0.9.3.1",
+  "lxml[html_clean]",
+  "typing-extensions",
+  "pymorphy3",
+  "pymorphy3-dicts-ru",
+  "requests",
+  "setuptools",
+  "wheel"
+
+  ]

@@ -1,0 +1,12 @@
+services:
+  sconewsbot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    container_name: sconewsbot
+    working_dir: /app
+    environment:
+      - VIRTUAL_ENV=/app/.venv
+      - PATH=/app/.venv/bin:$PATH
+    command: ["python", "src/hello.py"]
