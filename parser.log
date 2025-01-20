@@ -1,0 +1,10 @@
+2025-01-21 01:23:52,995 [INFO] Loading dictionaries from /home/nik/SCONewsBot/.venv/lib/python3.12/site-packages/pymorphy3_dicts_ru/data
+2025-01-21 01:23:53,019 [INFO] format: 2.4, revision: 417150, updated: 2022-01-08T22:09:24.565962
+2025-01-21 01:23:53,021 [INFO] Processing RSS feed: https://tass.ru/rss/v2.xml
+2025-01-21 01:23:53,485 [INFO] Processing link: https://tass.ru/mezhdunarodnaya-panorama/22928021
+2025-01-21 01:23:55,107 [INFO] No pair of countries found in https://tass.ru/mezhdunarodnaya-panorama/22928021
+2025-01-21 01:23:55,107 [INFO] Processing link: https://tass.ru/ekonomika/22928027
+2025-01-21 01:23:55,970 [INFO] No pair of countries found in https://tass.ru/ekonomika/22928027
+2025-01-21 01:23:55,970 [INFO] Processing link: https://tass.ru/mezhdunarodnaya-panorama/22928013
+2025-01-21 01:23:56,946 [INFO] No pair of countries found in https://tass.ru/mezhdunarodnaya-panorama/22928013
+2025-01-21 01:23:56,947 [INFO] Processing link: https://tass.ru/armiya-i-opk/22928007
