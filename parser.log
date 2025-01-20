@@ -1,10 +1,528 @@
-2025-01-21 01:23:52,995 [INFO] Loading dictionaries from /home/nik/SCONewsBot/.venv/lib/python3.12/site-packages/pymorphy3_dicts_ru/data
-2025-01-21 01:23:53,019 [INFO] format: 2.4, revision: 417150, updated: 2022-01-08T22:09:24.565962
-2025-01-21 01:23:53,021 [INFO] Processing RSS feed: https://tass.ru/rss/v2.xml
-2025-01-21 01:23:53,485 [INFO] Processing link: https://tass.ru/mezhdunarodnaya-panorama/22928021
-2025-01-21 01:23:55,107 [INFO] No pair of countries found in https://tass.ru/mezhdunarodnaya-panorama/22928021
-2025-01-21 01:23:55,107 [INFO] Processing link: https://tass.ru/ekonomika/22928027
-2025-01-21 01:23:55,970 [INFO] No pair of countries found in https://tass.ru/ekonomika/22928027
-2025-01-21 01:23:55,970 [INFO] Processing link: https://tass.ru/mezhdunarodnaya-panorama/22928013
-2025-01-21 01:23:56,946 [INFO] No pair of countries found in https://tass.ru/mezhdunarodnaya-panorama/22928013
-2025-01-21 01:23:56,947 [INFO] Processing link: https://tass.ru/armiya-i-opk/22928007
+2025-01-21 02:45:56,246 [INFO] Loading dictionaries from /home/nik/SCONewsBot/.venv/lib/python3.12/site-packages/pymorphy3_dicts_ru/data
+2025-01-21 02:45:56,284 [INFO] format: 2.4, revision: 417150, updated: 2022-01-08T22:09:24.565962
+2025-01-21 02:45:56,368 [INFO] Fetching RSS feed: https://tass.ru/rss/v2.xml
+2025-01-21 02:45:57,141 [INFO] HTTP Request: GET https://tass.ru/rss/v2.xml "HTTP/1.1 200 OK"
+2025-01-21 02:45:57,372 [INFO] Processing article: https://tass.ru/obschestvo/22928167
+2025-01-21 02:45:57,373 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22928151
+2025-01-21 02:45:57,373 [INFO] Processing article: https://tass.ru/proisshestviya/22928143
+2025-01-21 02:45:57,373 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22928137
+2025-01-21 02:45:57,373 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22928121
+2025-01-21 02:45:57,373 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22928115
+2025-01-21 02:45:57,374 [INFO] Processing article: https://tass.ru/proisshestviya/22928107
+2025-01-21 02:45:57,374 [INFO] Processing article: https://tass.ru/armiya-i-opk/22928093
+2025-01-21 02:45:57,374 [INFO] Processing article: https://tass.ru/proisshestviya/22928097
+2025-01-21 02:45:57,374 [INFO] Processing article: https://tass.ru/armiya-i-opk/22928103
+2025-01-21 02:45:57,374 [INFO] Processing article: https://tass.ru/proisshestviya/22928077
+2025-01-21 02:45:57,375 [INFO] Processing article: https://tass.ru/sport/22928067
+2025-01-21 02:45:57,375 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22928051
+2025-01-21 02:45:57,375 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22928045
+2025-01-21 02:45:57,375 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22928037
+2025-01-21 02:45:57,376 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22928029
+2025-01-21 02:45:57,376 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22928021
+2025-01-21 02:45:57,376 [INFO] Processing article: https://tass.ru/ekonomika/22928027
+2025-01-21 02:45:57,376 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22928013
+2025-01-21 02:45:57,376 [INFO] Processing article: https://tass.ru/armiya-i-opk/22928007
+2025-01-21 02:45:57,499 [INFO] HTTP Request: GET https://tass.ru/obschestvo/22928167 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:57,767 [INFO] HTTP Request: GET https://tass.ru/obschestvo/22928167 "HTTP/1.1 200 OK"
+2025-01-21 02:45:57,906 [INFO] No countries found in https://tass.ru/obschestvo/22928167
+2025-01-21 02:45:57,935 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928115 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:58,011 [INFO] HTTP Request: GET https://tass.ru/armiya-i-opk/22928103 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:58,012 [INFO] HTTP Request: GET https://tass.ru/ekonomika/22928027 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:58,013 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928137 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:58,013 [INFO] HTTP Request: GET https://tass.ru/armiya-i-opk/22928093 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:58,014 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928151 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:58,014 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928013 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:58,075 [INFO] HTTP Request: GET https://tass.ru/armiya-i-opk/22928007 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:58,335 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928151 "HTTP/1.1 200 OK"
+2025-01-21 02:45:58,337 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928115 "HTTP/1.1 200 OK"
+2025-01-21 02:45:58,477 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22928151
+2025-01-21 02:45:58,478 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928013 "HTTP/1.1 200 OK"
+2025-01-21 02:45:58,480 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928137 "HTTP/1.1 200 OK"
+2025-01-21 02:45:58,481 [INFO] HTTP Request: GET https://tass.ru/ekonomika/22928027 "HTTP/1.1 200 OK"
+2025-01-21 02:45:58,527 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22928013
+2025-01-21 02:45:58,586 [INFO] Found countries in https://tass.ru/mezhdunarodnaya-panorama/22928115: китай, россия, иран
+2025-01-21 02:45:58,587 [INFO] HTTP Request: GET https://tass.ru/armiya-i-opk/22928103 "HTTP/1.1 200 OK"
+2025-01-21 02:45:58,589 [INFO] HTTP Request: GET https://tass.ru/armiya-i-opk/22928093 "HTTP/1.1 200 OK"
+2025-01-21 02:45:58,642 [INFO] No countries found in https://tass.ru/armiya-i-opk/22928103
+2025-01-21 02:45:58,691 [INFO] No countries found in https://tass.ru/armiya-i-opk/22928093
+2025-01-21 02:45:58,692 [INFO] HTTP Request: GET https://tass.ru/armiya-i-opk/22928007 "HTTP/1.1 200 OK"
+2025-01-21 02:45:58,732 [INFO] No countries found in https://tass.ru/ekonomika/22928027
+2025-01-21 02:45:58,782 [INFO] No countries found in https://tass.ru/armiya-i-opk/22928007
+2025-01-21 02:45:58,847 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22928137
+2025-01-21 02:45:59,191 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22928097 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:59,255 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928037 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:59,265 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928021 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:59,266 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22928143 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:59,268 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928045 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:45:59,445 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22928097 "HTTP/1.1 200 OK"
+2025-01-21 02:45:59,660 [ERROR] Failed to parse article or no content found for https://tass.ru/proisshestviya/22928097
+2025-01-21 02:45:59,661 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928037 "HTTP/1.1 200 OK"
+2025-01-21 02:45:59,662 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928045 "HTTP/1.1 200 OK"
+2025-01-21 02:45:59,752 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22928037
+2025-01-21 02:45:59,753 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928021 "HTTP/1.1 200 OK"
+2025-01-21 02:45:59,754 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22928143 "HTTP/1.1 200 OK"
+2025-01-21 02:45:59,807 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22928021
+2025-01-21 02:45:59,858 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22928045
+2025-01-21 02:45:59,903 [ERROR] Failed to parse article or no content found for https://tass.ru/proisshestviya/22928143
+2025-01-21 02:46:01,035 [INFO] HTTP Request: GET https://tass.ru/sport/22928067 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:46:01,122 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22928077 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:46:01,123 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928051 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:46:01,141 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928121 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:46:01,155 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928029 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:46:01,392 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22928077 "HTTP/1.1 200 OK"
+2025-01-21 02:46:01,411 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928121 "HTTP/1.1 200 OK"
+2025-01-21 02:46:01,438 [INFO] HTTP Request: GET https://tass.ru/sport/22928067 "HTTP/1.1 200 OK"
+2025-01-21 02:46:01,509 [ERROR] Failed to parse article or no content found for https://tass.ru/proisshestviya/22928077
+2025-01-21 02:46:01,556 [INFO] No countries found in https://tass.ru/sport/22928067
+2025-01-21 02:46:01,620 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22928121
+2025-01-21 02:46:01,620 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928051 "HTTP/1.1 200 OK"
+2025-01-21 02:46:01,621 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22928029 "HTTP/1.1 200 OK"
+2025-01-21 02:46:01,674 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22928051
+2025-01-21 02:46:01,742 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22928029
+2025-01-21 02:46:05,205 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22928107 "HTTP/1.1 302 Moved Temporarily"
+2025-01-21 02:46:05,628 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22928107 "HTTP/1.1 200 OK"
+2025-01-21 02:46:05,705 [INFO] No countries found in https://tass.ru/proisshestviya/22928107
+2025-01-21 02:46:05,705 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927997
+2025-01-21 02:46:05,706 [INFO] Processing article: https://tass.ru/kultura/22928005
+2025-01-21 02:46:05,706 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927991
+2025-01-21 02:46:05,707 [INFO] Processing article: https://tass.ru/proisshestviya/22927985
+2025-01-21 02:46:05,707 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927977
+2025-01-21 02:46:05,708 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927959
+2025-01-21 02:46:05,708 [INFO] Processing article: https://tass.ru/obschestvo/22927971
+2025-01-21 02:46:05,709 [INFO] Processing article: https://tass.ru/obschestvo/22927967
+2025-01-21 02:46:05,709 [INFO] Processing article: https://tass.ru/obschestvo/22927937
+2025-01-21 02:46:05,710 [INFO] Processing article: https://tass.ru/proisshestviya/22927943
+2025-01-21 02:46:05,710 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927921
+2025-01-21 02:46:05,711 [INFO] Processing article: https://tass.ru/armiya-i-opk/22927919
+2025-01-21 02:46:05,711 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927911
+2025-01-21 02:46:05,712 [INFO] Processing article: https://tass.ru/ekonomika/22927891
+2025-01-21 02:46:05,713 [INFO] Processing article: https://tass.ru/ekonomika/22927885
+2025-01-21 02:46:05,713 [INFO] Processing article: https://tass.ru/nauka/22927903
+2025-01-21 02:46:05,713 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927875
+2025-01-21 02:46:05,714 [INFO] Processing article: https://tass.ru/politika/22927855
+2025-01-21 02:46:05,714 [INFO] Processing article: https://tass.ru/kultura/22927907
+2025-01-21 02:46:05,715 [INFO] Processing article: https://tass.ru/kultura/22927847
+2025-01-21 02:46:06,113 [INFO] HTTP Request: GET https://tass.ru/obschestvo/22927971 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,113 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927977 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,169 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927977
+2025-01-21 02:46:06,169 [INFO] HTTP Request: GET https://tass.ru/politika/22927855 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,170 [INFO] HTTP Request: GET https://tass.ru/obschestvo/22927967 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,173 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927991 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,235 [INFO] No countries found in https://tass.ru/obschestvo/22927971
+2025-01-21 02:46:06,237 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927911 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,238 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22927985 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,286 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927991
+2025-01-21 02:46:06,332 [INFO] No countries found in https://tass.ru/obschestvo/22927967
+2025-01-21 02:46:06,395 [INFO] No countries found in https://tass.ru/proisshestviya/22927985
+2025-01-21 02:46:06,395 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927959 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,437 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927959
+2025-01-21 02:46:06,546 [INFO] No countries found in https://tass.ru/politika/22927855
+2025-01-21 02:46:06,609 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927911
+2025-01-21 02:46:06,609 [INFO] HTTP Request: GET https://tass.ru/kultura/22928005 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,611 [INFO] HTTP Request: GET https://tass.ru/obschestvo/22927937 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,612 [INFO] HTTP Request: GET https://tass.ru/ekonomika/22927885 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,613 [INFO] HTTP Request: GET https://tass.ru/kultura/22927907 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,615 [INFO] HTTP Request: GET https://tass.ru/armiya-i-opk/22927919 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,616 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927997 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,618 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927921 "HTTP/1.1 200 OK"
+2025-01-21 02:46:06,676 [INFO] No countries found in https://tass.ru/ekonomika/22927885
+2025-01-21 02:46:06,727 [INFO] No countries found in https://tass.ru/kultura/22927907
+2025-01-21 02:46:06,807 [INFO] No countries found in https://tass.ru/armiya-i-opk/22927919
+2025-01-21 02:46:06,860 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927997
+2025-01-21 02:46:06,918 [INFO] No countries found in https://tass.ru/kultura/22928005
+2025-01-21 02:46:06,978 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927921
+2025-01-21 02:46:07,091 [INFO] No countries found in https://tass.ru/obschestvo/22927937
+2025-01-21 02:46:07,682 [INFO] HTTP Request: GET https://tass.ru/kultura/22927847 "HTTP/1.1 200 OK"
+2025-01-21 02:46:07,694 [INFO] HTTP Request: GET https://tass.ru/nauka/22927903 "HTTP/1.1 307 Temporary Redirect"
+2025-01-21 02:46:07,826 [INFO] No countries found in https://tass.ru/kultura/22927847
+2025-01-21 02:46:07,827 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22927943 "HTTP/1.1 200 OK"
+2025-01-21 02:46:07,828 [INFO] HTTP Request: GET https://tass.ru/ekonomika/22927891 "HTTP/1.1 200 OK"
+2025-01-21 02:46:07,830 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927875 "HTTP/1.1 200 OK"
+2025-01-21 02:46:07,900 [INFO] No countries found in https://tass.ru/proisshestviya/22927943
+2025-01-21 02:46:08,002 [INFO] Found countries in https://tass.ru/ekonomika/22927891: китай, россия, индия
+2025-01-21 02:46:08,119 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927875
+2025-01-21 02:46:08,506 [INFO] HTTP Request: GET https://nauka.tass.ru/nauka/22927903 "HTTP/1.1 200 OK"
+2025-01-21 02:46:08,510 [ERROR] Failed to parse article or no content found for https://tass.ru/nauka/22927903
+2025-01-21 02:46:08,511 [INFO] Processing article: https://tass.ru/politika/22927869
+2025-01-21 02:46:08,511 [INFO] Processing article: https://tass.ru/sport/22927865
+2025-01-21 02:46:08,512 [INFO] Processing article: https://tass.ru/proisshestviya/22927831
+2025-01-21 02:46:08,513 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927839
+2025-01-21 02:46:08,514 [INFO] Processing article: https://tass.ru/armiya-i-opk/22920773
+2025-01-21 02:46:08,515 [INFO] Processing article: https://tass.ru/proisshestviya/22927827
+2025-01-21 02:46:08,516 [INFO] Processing article: https://tass.ru/ekonomika/22927813
+2025-01-21 02:46:08,517 [INFO] Processing article: https://tass.ru/ekonomika/22927805
+2025-01-21 02:46:08,518 [INFO] Processing article: https://tass.ru/sport/22927797
+2025-01-21 02:46:08,518 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927779
+2025-01-21 02:46:08,519 [INFO] Processing article: https://tass.ru/sport/22927791
+2025-01-21 02:46:08,520 [INFO] Processing article: https://tass.ru/sport/22927789
+2025-01-21 02:46:08,520 [INFO] Processing article: https://tass.ru/kultura/22927771
+2025-01-21 02:46:08,521 [INFO] Processing article: https://tass.ru/sport/22927751
+2025-01-21 02:46:08,522 [INFO] Processing article: https://tass.ru/proisshestviya/22927731
+2025-01-21 02:46:08,522 [INFO] Processing article: https://tass.ru/proisshestviya/22927737
+2025-01-21 02:46:08,523 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927745
+2025-01-21 02:46:08,524 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927725
+2025-01-21 02:46:08,525 [INFO] Processing article: https://tass.ru/sport/22927721
+2025-01-21 02:46:08,525 [INFO] Processing article: https://tass.ru/politika/22927695
+2025-01-21 02:46:08,990 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927745 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,007 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22927827 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,008 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22927737 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,023 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927839 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,064 [INFO] No countries found in https://tass.ru/proisshestviya/22927737
+2025-01-21 02:46:09,064 [INFO] HTTP Request: GET https://tass.ru/sport/22927789 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,146 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927745
+2025-01-21 02:46:09,147 [INFO] HTTP Request: GET https://tass.ru/sport/22927791 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,149 [INFO] HTTP Request: GET https://tass.ru/kultura/22927771 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,204 [INFO] No countries found in https://tass.ru/proisshestviya/22927827
+2025-01-21 02:46:09,265 [INFO] No countries found in https://tass.ru/kultura/22927771
+2025-01-21 02:46:09,266 [INFO] HTTP Request: GET https://tass.ru/sport/22927865 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,268 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927779 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,269 [INFO] HTTP Request: GET https://tass.ru/ekonomika/22927805 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,270 [INFO] HTTP Request: GET https://tass.ru/politika/22927869 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,271 [INFO] HTTP Request: GET https://tass.ru/armiya-i-opk/22920773 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,273 [INFO] HTTP Request: GET https://tass.ru/sport/22927721 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,274 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927725 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,275 [INFO] HTTP Request: GET https://tass.ru/ekonomika/22927813 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,277 [INFO] HTTP Request: GET https://tass.ru/politika/22927695 "HTTP/1.1 200 OK"
+2025-01-21 02:46:09,326 [INFO] No countries found in https://tass.ru/sport/22927865
+2025-01-21 02:46:09,395 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927839
+2025-01-21 02:46:09,441 [INFO] No countries found in https://tass.ru/sport/22927789
+2025-01-21 02:46:09,501 [INFO] No countries found in https://tass.ru/sport/22927791
+2025-01-21 02:46:09,563 [INFO] No countries found in https://tass.ru/armiya-i-opk/22920773
+2025-01-21 02:46:09,615 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927725
+2025-01-21 02:46:09,673 [INFO] No countries found in https://tass.ru/ekonomika/22927813
+2025-01-21 02:46:09,791 [INFO] Found countries in https://tass.ru/politika/22927695: китай, россия
+2025-01-21 02:46:09,918 [INFO] No countries found in https://tass.ru/politika/22927869
+2025-01-21 02:46:09,982 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927779
+2025-01-21 02:46:10,046 [INFO] No countries found in https://tass.ru/ekonomika/22927805
+2025-01-21 02:46:10,046 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22927731 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,048 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22927831 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,049 [INFO] HTTP Request: GET https://tass.ru/sport/22927751 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,052 [INFO] HTTP Request: GET https://tass.ru/sport/22927797 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,139 [INFO] No countries found in https://tass.ru/proisshestviya/22927731
+2025-01-21 02:46:10,181 [INFO] No countries found in https://tass.ru/proisshestviya/22927831
+2025-01-21 02:46:10,252 [INFO] No countries found in https://tass.ru/sport/22927751
+2025-01-21 02:46:10,308 [INFO] No countries found in https://tass.ru/sport/22927721
+2025-01-21 02:46:10,369 [INFO] No countries found in https://tass.ru/sport/22927797
+2025-01-21 02:46:10,369 [INFO] Processing article: https://tass.ru/nauka/22927707
+2025-01-21 02:46:10,370 [INFO] Processing article: https://tass.ru/proisshestviya/22927691
+2025-01-21 02:46:10,371 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927655
+2025-01-21 02:46:10,372 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927669
+2025-01-21 02:46:10,372 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927649
+2025-01-21 02:46:10,373 [INFO] Processing article: https://tass.ru/politika/22927635
+2025-01-21 02:46:10,373 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927603
+2025-01-21 02:46:10,374 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927625
+2025-01-21 02:46:10,375 [INFO] Processing article: https://tass.ru/proisshestviya/22927613
+2025-01-21 02:46:10,376 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927597
+2025-01-21 02:46:10,377 [INFO] Processing article: https://tass.ru/politika/22927565
+2025-01-21 02:46:10,377 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927557
+2025-01-21 02:46:10,378 [INFO] Processing article: https://tass.ru/proisshestviya/22927589
+2025-01-21 02:46:10,379 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927547
+2025-01-21 02:46:10,379 [INFO] Processing article: https://tass.ru/kultura/22927533
+2025-01-21 02:46:10,380 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927541
+2025-01-21 02:46:10,381 [INFO] Processing article: https://tass.ru/obschestvo/22927579
+2025-01-21 02:46:10,382 [INFO] Processing article: https://tass.ru/proisshestviya/22927553
+2025-01-21 02:46:10,382 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927537
+2025-01-21 02:46:10,383 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927525
+2025-01-21 02:46:10,625 [INFO] HTTP Request: GET https://tass.ru/nauka/22927707 "HTTP/1.1 307 Temporary Redirect"
+2025-01-21 02:46:10,682 [INFO] HTTP Request: GET https://tass.ru/politika/22927565 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,806 [INFO] No countries found in https://tass.ru/politika/22927565
+2025-01-21 02:46:10,807 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927625 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,823 [INFO] HTTP Request: GET https://nauka.tass.ru/nauka/22927707 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,828 [ERROR] Failed to parse article or no content found for https://tass.ru/nauka/22927707
+2025-01-21 02:46:10,900 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927625
+2025-01-21 02:46:10,901 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927557 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,902 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927669 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,903 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927597 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,904 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927649 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,905 [INFO] HTTP Request: GET https://tass.ru/kultura/22927533 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,906 [INFO] HTTP Request: GET https://tass.ru/obschestvo/22927579 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,907 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927537 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,995 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927669
+2025-01-21 02:46:10,997 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22927589 "HTTP/1.1 200 OK"
+2025-01-21 02:46:10,999 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22927553 "HTTP/1.1 200 OK"
+2025-01-21 02:46:11,049 [INFO] No countries found in https://tass.ru/kultura/22927533
+2025-01-21 02:46:11,130 [INFO] No countries found in https://tass.ru/obschestvo/22927579
+2025-01-21 02:46:11,206 [INFO] No countries found in https://tass.ru/proisshestviya/22927589
+2025-01-21 02:46:11,272 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927537
+2025-01-21 02:46:11,342 [INFO] No countries found in https://tass.ru/proisshestviya/22927553
+2025-01-21 02:46:11,422 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927557
+2025-01-21 02:46:11,478 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927597
+2025-01-21 02:46:11,537 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927649
+2025-01-21 02:46:11,538 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927547 "HTTP/1.1 200 OK"
+2025-01-21 02:46:11,540 [INFO] HTTP Request: GET https://tass.ru/politika/22927635 "HTTP/1.1 200 OK"
+2025-01-21 02:46:11,541 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927525 "HTTP/1.1 200 OK"
+2025-01-21 02:46:11,543 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22927613 "HTTP/1.1 200 OK"
+2025-01-21 02:46:11,626 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927547
+2025-01-21 02:46:11,695 [INFO] No countries found in https://tass.ru/politika/22927635
+2025-01-21 02:46:11,783 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927525
+2025-01-21 02:46:11,832 [INFO] No countries found in https://tass.ru/proisshestviya/22927613
+2025-01-21 02:46:11,832 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22927691 "HTTP/1.1 200 OK"
+2025-01-21 02:46:11,834 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927603 "HTTP/1.1 200 OK"
+2025-01-21 02:46:11,836 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927541 "HTTP/1.1 200 OK"
+2025-01-21 02:46:11,837 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927655 "HTTP/1.1 200 OK"
+2025-01-21 02:46:11,881 [INFO] No countries found in https://tass.ru/proisshestviya/22927691
+2025-01-21 02:46:11,935 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927603
+2025-01-21 02:46:11,982 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927541
+2025-01-21 02:46:12,048 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927655
+2025-01-21 02:46:12,048 [INFO] Processing article: https://tass.ru/ekonomika/22927517
+2025-01-21 02:46:12,049 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927481
+2025-01-21 02:46:12,050 [INFO] Processing article: https://tass.ru/sport/22927501
+2025-01-21 02:46:12,051 [INFO] Processing article: https://tass.ru/politika/22927469
+2025-01-21 02:46:12,052 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927495
+2025-01-21 02:46:12,052 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927463
+2025-01-21 02:46:12,053 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927455
+2025-01-21 02:46:12,054 [INFO] Processing article: https://tass.ru/obschestvo/22927451
+2025-01-21 02:46:12,054 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927427
+2025-01-21 02:46:12,055 [INFO] Processing article: https://tass.ru/politika/22927389
+2025-01-21 02:46:12,055 [INFO] Processing article: https://tass.ru/sport/22927435
+2025-01-21 02:46:12,056 [INFO] Processing article: https://tass.ru/sport/22927399
+2025-01-21 02:46:12,057 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927373
+2025-01-21 02:46:12,058 [INFO] Processing article: https://tass.ru/ekonomika/22927405
+2025-01-21 02:46:12,059 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927365
+2025-01-21 02:46:12,060 [INFO] Processing article: https://tass.ru/ekonomika/22927357
+2025-01-21 02:46:12,062 [INFO] Processing article: https://tass.ru/proisshestviya/22927383
+2025-01-21 02:46:12,063 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927349
+2025-01-21 02:46:12,064 [INFO] Processing article: https://tass.ru/mezhdunarodnaya-panorama/22927343
+2025-01-21 02:46:12,065 [INFO] Processing article: https://tass.ru/politika/22927333
+2025-01-21 02:46:12,333 [INFO] HTTP Request: GET https://tass.ru/ekonomika/22927517 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,476 [INFO] No countries found in https://tass.ru/ekonomika/22927517
+2025-01-21 02:46:12,477 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927455 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,539 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927455
+2025-01-21 02:46:12,540 [INFO] HTTP Request: GET https://tass.ru/sport/22927435 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,542 [INFO] HTTP Request: GET https://tass.ru/ekonomika/22927405 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,544 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927463 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,545 [INFO] HTTP Request: GET https://tass.ru/politika/22927469 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,546 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927365 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,548 [INFO] HTTP Request: GET https://tass.ru/politika/22927333 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,552 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927495 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,555 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927373 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,639 [INFO] No countries found in https://tass.ru/politika/22927333
+2025-01-21 02:46:12,716 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927495
+2025-01-21 02:46:12,717 [INFO] HTTP Request: GET https://tass.ru/politika/22927389 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,719 [INFO] HTTP Request: GET https://tass.ru/sport/22927399 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,720 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927349 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,722 [INFO] HTTP Request: GET https://tass.ru/sport/22927501 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,724 [INFO] HTTP Request: GET https://tass.ru/proisshestviya/22927383 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,726 [INFO] HTTP Request: GET https://tass.ru/obschestvo/22927451 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,728 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927481 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,729 [INFO] HTTP Request: GET https://tass.ru/ekonomika/22927357 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,730 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927343 "HTTP/1.1 200 OK"
+2025-01-21 02:46:12,805 [INFO] No countries found in https://tass.ru/politika/22927389
+2025-01-21 02:46:12,894 [INFO] Found countries in https://tass.ru/mezhdunarodnaya-panorama/22927373: китай, россия
+2025-01-21 02:46:12,939 [INFO] No countries found in https://tass.ru/sport/22927399
+2025-01-21 02:46:12,999 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927349
+2025-01-21 02:46:13,065 [INFO] No countries found in https://tass.ru/sport/22927501
+2025-01-21 02:46:13,113 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927463
+2025-01-21 02:46:13,163 [INFO] No countries found in https://tass.ru/ekonomika/22927405
+2025-01-21 02:46:13,213 [ERROR] Failed to parse article or no content found for https://tass.ru/proisshestviya/22927383
+2025-01-21 02:46:13,291 [INFO] No countries found in https://tass.ru/politika/22927469
+2025-01-21 02:46:13,677 [INFO] No countries found in https://tass.ru/sport/22927435
+2025-01-21 02:46:13,737 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927365
+2025-01-21 02:46:13,808 [INFO] No countries found in https://tass.ru/obschestvo/22927451
+2025-01-21 02:46:13,883 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927481
+2025-01-21 02:46:13,955 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927343
+2025-01-21 02:46:13,957 [INFO] HTTP Request: GET https://tass.ru/mezhdunarodnaya-panorama/22927427 "HTTP/1.1 200 OK"
+2025-01-21 02:46:14,022 [INFO] No countries found in https://tass.ru/ekonomika/22927357
+2025-01-21 02:46:14,072 [INFO] No countries found in https://tass.ru/mezhdunarodnaya-panorama/22927427
+2025-01-21 02:46:14,072 [INFO] Fetching RSS feed: https://ria.ru/export/rss2/archive/index.xml
+2025-01-21 02:46:14,722 [INFO] HTTP Request: GET https://ria.ru/export/rss2/archive/index.xml "HTTP/1.1 200 OK"
+2025-01-21 02:46:14,760 [INFO] Processing article: https://ria.ru/20250121/ssha-1994721268.html
+2025-01-21 02:46:14,761 [INFO] Processing article: https://ria.ru/20250121/tramp-1994720982.html
+2025-01-21 02:46:14,762 [INFO] Processing article: https://ria.ru/20250121/frantsija-1994720802.html
+2025-01-21 02:46:14,762 [INFO] Processing article: https://ria.ru/20250121/ssha-1994720615.html
+2025-01-21 02:46:14,763 [INFO] Processing article: https://ria.ru/20250121/tramp-1994720525.html
+2025-01-21 02:46:14,763 [INFO] Processing article: https://ria.ru/20250121/kolumbiya-1994720196.html
+2025-01-21 02:46:14,764 [INFO] Processing article: https://ria.ru/20250121/valyuta-1994714261.html
+2025-01-21 02:46:14,765 [INFO] Processing article: https://ria.ru/20250121/zelenskiy-1994719978.html
+2025-01-21 02:46:14,765 [INFO] Processing article: https://ria.ru/20250121/prestupleniya-1994719775.html
+2025-01-21 02:46:14,766 [INFO] Processing article: https://ria.ru/20250121/trevoga-1994719665.html
+2025-01-21 02:46:14,766 [INFO] Processing article: https://ria.ru/20250121/ataka-1994719216.html
+2025-01-21 02:46:14,767 [INFO] Processing article: https://ria.ru/20250121/migranty-1994718788.html
+2025-01-21 02:46:14,768 [INFO] Processing article: https://ria.ru/20250121/rubio-1994718437.html
+2025-01-21 02:46:14,768 [INFO] Processing article: https://ria.ru/20250121/kundera-1994718146.html
+2025-01-21 02:46:14,769 [INFO] Processing article: https://ria.ru/20250121/uljanov-1994717565.html
+2025-01-21 02:46:14,769 [INFO] Processing article: https://ria.ru/20250121/trevoga-1994717292.html
+2025-01-21 02:46:14,770 [INFO] Processing article: https://ria.ru/20250121/evrosoyuz-1994717022.html
+2025-01-21 02:46:14,770 [INFO] Processing article: https://ria.ru/20250121/gripp-1994716848.html
+2025-01-21 02:46:14,771 [INFO] Processing article: https://ria.ru/20250121/tramp-1994716271.html
+2025-01-21 02:46:14,771 [INFO] Processing article: https://ria.ru/20250121/kiev-1994716604.html
+2025-01-21 02:46:14,984 [INFO] HTTP Request: GET https://ria.ru/20250121/ssha-1994721268.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:15,302 [INFO] No countries found in https://ria.ru/20250121/ssha-1994721268.html
+2025-01-21 02:46:15,559 [INFO] HTTP Request: GET https://ria.ru/20250121/uljanov-1994717565.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:15,560 [INFO] HTTP Request: GET https://ria.ru/20250121/tramp-1994720525.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:15,636 [INFO] HTTP Request: GET https://ria.ru/20250121/frantsija-1994720802.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:15,937 [INFO] No countries found in https://ria.ru/20250121/uljanov-1994717565.html
+2025-01-21 02:46:16,225 [INFO] No countries found in https://ria.ru/20250121/tramp-1994720525.html
+2025-01-21 02:46:16,227 [INFO] HTTP Request: GET https://ria.ru/20250121/tramp-1994716271.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:16,229 [INFO] HTTP Request: GET https://ria.ru/20250121/gripp-1994716848.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:16,232 [INFO] HTTP Request: GET https://ria.ru/20250121/tramp-1994720982.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:16,233 [INFO] HTTP Request: GET https://ria.ru/20250121/ssha-1994720615.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:16,235 [INFO] HTTP Request: GET https://ria.ru/20250121/kiev-1994716604.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:16,493 [INFO] No countries found in https://ria.ru/20250121/frantsija-1994720802.html
+2025-01-21 02:46:16,839 [INFO] No countries found in https://ria.ru/20250121/tramp-1994716271.html
+2025-01-21 02:46:17,153 [INFO] No countries found in https://ria.ru/20250121/gripp-1994716848.html
+2025-01-21 02:46:17,467 [INFO] No countries found in https://ria.ru/20250121/tramp-1994720982.html
+2025-01-21 02:46:17,736 [INFO] No countries found in https://ria.ru/20250121/ssha-1994720615.html
+2025-01-21 02:46:18,048 [INFO] No countries found in https://ria.ru/20250121/kiev-1994716604.html
+2025-01-21 02:46:18,468 [INFO] HTTP Request: GET https://ria.ru/20250121/trevoga-1994719665.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:18,533 [INFO] HTTP Request: GET https://ria.ru/20250121/valyuta-1994714261.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:18,534 [INFO] HTTP Request: GET https://ria.ru/20250121/kolumbiya-1994720196.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:18,807 [INFO] No countries found in https://ria.ru/20250121/trevoga-1994719665.html
+2025-01-21 02:46:19,143 [INFO] No countries found in https://ria.ru/20250121/kolumbiya-1994720196.html
+2025-01-21 02:46:19,144 [INFO] HTTP Request: GET https://ria.ru/20250121/zelenskiy-1994719978.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:19,146 [INFO] HTTP Request: GET https://ria.ru/20250121/migranty-1994718788.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:19,149 [INFO] HTTP Request: GET https://ria.ru/20250121/evrosoyuz-1994717022.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:19,533 [INFO] No countries found in https://ria.ru/20250121/zelenskiy-1994719978.html
+2025-01-21 02:46:20,032 [INFO] No countries found in https://ria.ru/20250121/valyuta-1994714261.html
+2025-01-21 02:46:20,437 [INFO] No countries found in https://ria.ru/20250121/migranty-1994718788.html
+2025-01-21 02:46:20,438 [INFO] HTTP Request: GET https://ria.ru/20250121/prestupleniya-1994719775.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:20,441 [INFO] HTTP Request: GET https://ria.ru/20250121/kundera-1994718146.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:20,443 [INFO] HTTP Request: GET https://ria.ru/20250121/rubio-1994718437.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:20,446 [INFO] HTTP Request: GET https://ria.ru/20250121/trevoga-1994717292.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:20,826 [INFO] No countries found in https://ria.ru/20250121/kundera-1994718146.html
+2025-01-21 02:46:21,199 [INFO] Found countries in https://ria.ru/20250121/rubio-1994718437.html: китай, иран
+2025-01-21 02:46:21,620 [INFO] No countries found in https://ria.ru/20250121/prestupleniya-1994719775.html
+2025-01-21 02:46:21,993 [INFO] No countries found in https://ria.ru/20250121/evrosoyuz-1994717022.html
+2025-01-21 02:46:22,291 [INFO] No countries found in https://ria.ru/20250121/trevoga-1994717292.html
+2025-01-21 02:46:23,024 [INFO] HTTP Request: GET https://ria.ru/20250121/ataka-1994719216.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:23,385 [INFO] No countries found in https://ria.ru/20250121/ataka-1994719216.html
+2025-01-21 02:46:23,386 [INFO] Processing article: https://ria.ru/20250121/ukraina-1994716409.html
+2025-01-21 02:46:23,386 [INFO] Processing article: https://ria.ru/20250121/sapery-1994715926.html
+2025-01-21 02:46:23,387 [INFO] Processing article: https://ria.ru/20250121/obstrely-1994715760.html
+2025-01-21 02:46:23,387 [INFO] Processing article: https://ria.ru/20250121/eksperty-1994715559.html
+2025-01-21 02:46:23,388 [INFO] Processing article: https://ria.ru/20250121/mask-1994715356.html
+2025-01-21 02:46:23,388 [INFO] Processing article: https://ria.ru/20250120/gruziya-1994714863.html
+2025-01-21 02:46:23,389 [INFO] Processing article: https://ria.ru/20250120/chekhiya-1994714607.html
+2025-01-21 02:46:23,390 [INFO] Processing article: https://ria.ru/20250120/obstrel-1994714133.html
+2025-01-21 02:46:23,390 [INFO] Processing article: https://ria.ru/20250120/dodon-1994713951.html
+2025-01-21 02:46:23,391 [INFO] Processing article: https://ria.ru/20250120/khamas-1994713846.html
+2025-01-21 02:46:23,391 [INFO] Processing article: https://ria.ru/20250120/ukraina-1994713720.html
+2025-01-21 02:46:23,392 [INFO] Processing article: https://ria.ru/20250120/tramp-1994713449.html
+2025-01-21 02:46:23,392 [INFO] Processing article: https://ria.ru/20250120/ssha-1994713292.html
+2025-01-21 02:46:23,392 [INFO] Processing article: https://ria.ru/20250120/tramp-1994713066.html
+2025-01-21 02:46:23,393 [INFO] Processing article: https://ria.ru/20250120/tramp-1994712849.html
+2025-01-21 02:46:23,394 [INFO] Processing article: https://ria.ru/20250120/strelba-1994712708.html
+2025-01-21 02:46:23,395 [INFO] Processing article: https://ria.ru/20250120/dron-1994711969.html
+2025-01-21 02:46:23,396 [INFO] Processing article: https://ria.ru/20250120/mask-1994711825.html
+2025-01-21 02:46:23,396 [INFO] Processing article: https://ria.ru/20250120/tramp-1994711701.html
+2025-01-21 02:46:23,397 [INFO] Processing article: https://ria.ru/20250120/pvo-1994711269.html
+2025-01-21 02:46:23,622 [INFO] HTTP Request: GET https://ria.ru/20250120/obstrel-1994714133.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:24,089 [INFO] No countries found in https://ria.ru/20250120/obstrel-1994714133.html
+2025-01-21 02:46:24,093 [INFO] HTTP Request: GET https://ria.ru/20250121/mask-1994715356.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:24,094 [INFO] HTTP Request: GET https://ria.ru/20250120/ssha-1994713292.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:24,096 [INFO] HTTP Request: GET https://ria.ru/20250120/ukraina-1994713720.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:24,097 [INFO] HTTP Request: GET https://ria.ru/20250121/ukraina-1994716409.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:24,099 [INFO] HTTP Request: GET https://ria.ru/20250121/eksperty-1994715559.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:24,101 [INFO] HTTP Request: GET https://ria.ru/20250120/mask-1994711825.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:24,102 [INFO] HTTP Request: GET https://ria.ru/20250121/obstrely-1994715760.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:24,438 [INFO] No countries found in https://ria.ru/20250121/mask-1994715356.html
+2025-01-21 02:46:24,736 [INFO] No countries found in https://ria.ru/20250120/ssha-1994713292.html
+2025-01-21 02:46:25,078 [INFO] No countries found in https://ria.ru/20250120/ukraina-1994713720.html
+2025-01-21 02:46:25,451 [INFO] No countries found in https://ria.ru/20250121/ukraina-1994716409.html
+2025-01-21 02:46:25,452 [INFO] HTTP Request: GET https://ria.ru/20250120/gruziya-1994714863.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:25,454 [INFO] HTTP Request: GET https://ria.ru/20250120/chekhiya-1994714607.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:25,762 [INFO] No countries found in https://ria.ru/20250120/gruziya-1994714863.html
+2025-01-21 02:46:26,104 [INFO] No countries found in https://ria.ru/20250120/chekhiya-1994714607.html
+2025-01-21 02:46:26,105 [INFO] HTTP Request: GET https://ria.ru/20250121/sapery-1994715926.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:26,502 [INFO] No countries found in https://ria.ru/20250121/eksperty-1994715559.html
+2025-01-21 02:46:26,830 [INFO] No countries found in https://ria.ru/20250121/sapery-1994715926.html
+2025-01-21 02:46:27,129 [INFO] No countries found in https://ria.ru/20250121/obstrely-1994715760.html
+2025-01-21 02:46:27,474 [INFO] No countries found in https://ria.ru/20250120/mask-1994711825.html
+2025-01-21 02:46:27,475 [INFO] HTTP Request: GET https://ria.ru/20250120/tramp-1994711701.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:27,477 [INFO] HTTP Request: GET https://ria.ru/20250120/tramp-1994712849.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:27,478 [INFO] HTTP Request: GET https://ria.ru/20250120/strelba-1994712708.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:27,480 [INFO] HTTP Request: GET https://ria.ru/20250120/tramp-1994713066.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:27,482 [INFO] HTTP Request: GET https://ria.ru/20250120/dodon-1994713951.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:27,815 [INFO] No countries found in https://ria.ru/20250120/tramp-1994711701.html
+2025-01-21 02:46:28,198 [INFO] No countries found in https://ria.ru/20250120/tramp-1994712849.html
+2025-01-21 02:46:28,518 [INFO] No countries found in https://ria.ru/20250120/strelba-1994712708.html
+2025-01-21 02:46:28,807 [INFO] No countries found in https://ria.ru/20250120/tramp-1994713066.html
+2025-01-21 02:46:29,165 [INFO] No countries found in https://ria.ru/20250120/dodon-1994713951.html
+2025-01-21 02:46:29,876 [INFO] HTTP Request: GET https://ria.ru/20250120/tramp-1994713449.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:30,026 [INFO] HTTP Request: GET https://ria.ru/20250120/dron-1994711969.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:30,032 [INFO] HTTP Request: GET https://ria.ru/20250120/khamas-1994713846.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:30,034 [INFO] HTTP Request: GET https://ria.ru/20250120/pvo-1994711269.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:30,382 [INFO] No countries found in https://ria.ru/20250120/dron-1994711969.html
+2025-01-21 02:46:30,745 [INFO] No countries found in https://ria.ru/20250120/tramp-1994713449.html
+2025-01-21 02:46:31,129 [INFO] No countries found in https://ria.ru/20250120/pvo-1994711269.html
+2025-01-21 02:46:31,536 [INFO] No countries found in https://ria.ru/20250120/khamas-1994713846.html
+2025-01-21 02:46:31,536 [INFO] Processing article: https://ria.ru/20250120/sanktsii-1994710844.html
+2025-01-21 02:46:31,537 [INFO] Processing article: https://ria.ru/20250120/zaytsev-1994710379.html
+2025-01-21 02:46:31,537 [INFO] Processing article: https://ria.ru/20250120/slutskiy-1994710038.html
+2025-01-21 02:46:31,538 [INFO] Processing article: https://ria.ru/20250120/tramp-1994709720.html
+2025-01-21 02:46:31,538 [INFO] Processing article: https://ria.ru/20250120/tramp-1994709530.html
+2025-01-21 02:46:31,539 [INFO] Processing article: https://ria.ru/20250120/panama-1994709053.html
+2025-01-21 02:46:31,539 [INFO] Processing article: https://ria.ru/20250120/minfin-1994708905.html
+2025-01-21 02:46:31,539 [INFO] Processing article: https://ria.ru/20250120/dnr-1994708738.html
+2025-01-21 02:46:31,540 [INFO] Processing article: https://ria.ru/20250120/zelenskiy-1994707903.html
+2025-01-21 02:46:31,540 [INFO] Processing article: https://ria.ru/20250120/pushkov-1994707245.html
+2025-01-21 02:46:31,541 [INFO] Processing article: https://ria.ru/20250120/kosachev-1994707102.html
+2025-01-21 02:46:31,541 [INFO] Processing article: https://ria.ru/20250120/opasnost-1994706328.html
+2025-01-21 02:46:31,541 [INFO] Processing article: https://ria.ru/20250120/tramp-1994706167.html
+2025-01-21 02:46:31,542 [INFO] Processing article: https://ria.ru/20250120/zakharova-1994704829.html
+2025-01-21 02:46:31,542 [INFO] Processing article: https://ria.ru/20250120/tramp-1994704135.html
+2025-01-21 02:46:31,543 [INFO] Processing article: https://ria.ru/20250120/tramp-1994703958.html
+2025-01-21 02:46:31,543 [INFO] Processing article: https://ria.ru/20250120/tramp-1994703822.html
+2025-01-21 02:46:31,544 [INFO] Processing article: https://ria.ru/20250120/tramp-1994703336.html
+2025-01-21 02:46:31,544 [INFO] Processing article: https://ria.ru/20250120/pozdravlenie-1994703126.html
+2025-01-21 02:46:31,544 [INFO] Processing article: https://ria.ru/20250120/tramp-1994702976.html
+2025-01-21 02:46:31,801 [INFO] HTTP Request: GET https://ria.ru/20250120/zaytsev-1994710379.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:32,263 [INFO] No countries found in https://ria.ru/20250120/zaytsev-1994710379.html
+2025-01-21 02:46:32,267 [INFO] HTTP Request: GET https://ria.ru/20250120/zelenskiy-1994707903.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:32,269 [INFO] HTTP Request: GET https://ria.ru/20250120/dnr-1994708738.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:32,270 [INFO] HTTP Request: GET https://ria.ru/20250120/slutskiy-1994710038.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:32,272 [INFO] HTTP Request: GET https://ria.ru/20250120/panama-1994709053.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:32,274 [INFO] HTTP Request: GET https://ria.ru/20250120/tramp-1994709530.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:32,276 [INFO] HTTP Request: GET https://ria.ru/20250120/zakharova-1994704829.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:32,704 [INFO] No countries found in https://ria.ru/20250120/zelenskiy-1994707903.html
+2025-01-21 02:46:33,091 [INFO] No countries found in https://ria.ru/20250120/dnr-1994708738.html
+2025-01-21 02:46:33,510 [INFO] No countries found in https://ria.ru/20250120/slutskiy-1994710038.html
+2025-01-21 02:46:33,915 [INFO] No countries found in https://ria.ru/20250120/panama-1994709053.html
+2025-01-21 02:46:34,242 [INFO] No countries found in https://ria.ru/20250120/tramp-1994709530.html
+2025-01-21 02:46:34,597 [INFO] No countries found in https://ria.ru/20250120/zakharova-1994704829.html
+2025-01-21 02:46:34,599 [INFO] HTTP Request: GET https://ria.ru/20250120/tramp-1994706167.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:34,909 [INFO] No countries found in https://ria.ru/20250120/tramp-1994706167.html
+2025-01-21 02:46:35,109 [INFO] HTTP Request: GET https://ria.ru/20250120/tramp-1994704135.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:35,496 [INFO] No countries found in https://ria.ru/20250120/tramp-1994704135.html
+2025-01-21 02:46:35,497 [INFO] HTTP Request: GET https://ria.ru/20250120/tramp-1994703822.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:35,498 [INFO] HTTP Request: GET https://ria.ru/20250120/pushkov-1994707245.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:35,499 [INFO] HTTP Request: GET https://ria.ru/20250120/kosachev-1994707102.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:35,501 [INFO] HTTP Request: GET https://ria.ru/20250120/tramp-1994709720.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:35,793 [INFO] No countries found in https://ria.ru/20250120/tramp-1994703822.html
+2025-01-21 02:46:36,166 [INFO] No countries found in https://ria.ru/20250120/kosachev-1994707102.html
+2025-01-21 02:46:36,508 [INFO] No countries found in https://ria.ru/20250120/tramp-1994709720.html
+2025-01-21 02:46:36,846 [INFO] No countries found in https://ria.ru/20250120/pushkov-1994707245.html
+2025-01-21 02:46:36,847 [INFO] HTTP Request: GET https://ria.ru/20250120/pozdravlenie-1994703126.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:36,850 [INFO] HTTP Request: GET https://ria.ru/20250120/opasnost-1994706328.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:36,852 [INFO] HTTP Request: GET https://ria.ru/20250120/sanktsii-1994710844.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:36,854 [INFO] HTTP Request: GET https://ria.ru/20250120/tramp-1994702976.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:36,856 [INFO] HTTP Request: GET https://ria.ru/20250120/minfin-1994708905.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:36,858 [INFO] HTTP Request: GET https://ria.ru/20250120/tramp-1994703336.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:36,859 [INFO] HTTP Request: GET https://ria.ru/20250120/tramp-1994703958.html "HTTP/1.1 200 OK"
+2025-01-21 02:46:37,232 [INFO] No countries found in https://ria.ru/20250120/pozdravlenie-1994703126.html
+2025-01-21 02:46:37,551 [INFO] No countries found in https://ria.ru/20250120/opasnost-1994706328.html
+2025-01-21 02:46:37,910 [INFO] No countries found in https://ria.ru/20250120/sanktsii-1994710844.html
+2025-01-21 02:46:38,216 [INFO] No countries found in https://ria.ru/20250120/tramp-1994702976.html
+2025-01-21 02:46:38,590 [INFO] No countries found in https://ria.ru/20250120/minfin-1994708905.html
+2025-01-21 02:46:38,911 [INFO] No countries found in https://ria.ru/20250120/tramp-1994703336.html
+2025-01-21 02:46:39,260 [INFO] No countries found in https://ria.ru/20250120/tramp-1994703958.html
+2025-01-21 02:46:39,260 [INFO] Processing article: https://ria.ru/20250120/soglashenie-1994702760.html
+2025-01-21 02:46:39,261 [INFO] Processing article: https://ria.ru/20250120/tramp-1994702610.html
+2025-01-21 02:46:39,262 [INFO] Processing article: https://ria.ru/20250120/vsu-1994702442.html
+2025-01-21 02:46:39,262 [INFO] Processing article: https://ria.ru/20250120/tramp-1994701957.html
+2025-01-21 02:46:39,263 [INFO] Processing article: https://ria.ru/20250120/ssha-1994701750.html
+2025-01-21 02:46:39,263 [INFO] Processing article: https://ria.ru/20250120/tramp-1994701333.html
+2025-01-21 02:46:39,264 [INFO] Processing article: https://ria.ru/20250120/tramp-1994700940.html
+2025-01-21 02:46:39,265 [INFO] Processing article: https://ria.ru/20250120/tramp-1994700957.html
+2025-01-21 02:46:39,265 [INFO] Processing article: https://ria.ru/20250120/tramp-1994700420.html
+2025-01-21 02:46:39,266 [INFO] Processing article: https://ria.ru/20250120/tramp-1994700075.html
+2025-01-21 02:46:39,266 [INFO] Processing article: https://ria.ru/20250120/tramp-1994698905.html
+2025-01-21 02:46:39,266 [INFO] Processing article: https://ria.ru/20250120/tramp-1994698732.html
+2025-01-21 02:46:39,267 [INFO] Processing article: https://ria.ru/20250120/tramp-1994698629.html
+2025-01-21 02:46:39,267 [INFO] Processing article: https://ria.ru/20250120/tramp-1994698523.html
+2025-01-21 02:46:39,268 [INFO] Processing article: https://ria.ru/20250120/tramp-1994698380.html
+2025-01-21 02:46:39,268 [INFO] Processing article: https://ria.ru/20250120/google-1994697922.html
+2025-01-21 02:46:39,269 [INFO] Processing article: https://ria.ru/20250120/tramp-1994697628.html
+2025-01-21 02:46:39,270 [INFO] Processing article: https://ria.ru/20250120/tramp-1994697065.html
+2025-01-21 02:46:39,270 [INFO] Processing article: https://ria.ru/20250120/vsu-1994696656.html
+2025-01-21 02:46:39,271 [INFO] Processing article: https://ria.ru/20250120/tramp-1994696555.html
