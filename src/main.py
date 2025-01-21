@@ -6,9 +6,10 @@ import httpx
 from httpx import AsyncClient
 from newspaper import Article
 
-from ai.deepseek import analyze_with_deepseek
+from ai.deepseek import analyze_with_deepseek, rewrite_text_with_deepseek
 from config.logging import setup_logging
 from config.settings import PARSER_CONFIG
+from integrations.telegram import notify_admins
 from utils.http_utils import fetch_url
 from utils.rss_utils import fetch_rss_links
 from utils.text_processing import (
@@ -88,6 +89,10 @@ async def process_article_link(
             main_logger.info(f"Found countries in {link}: {', '.join(countries_found)}")
             with open("processed_links.txt", "a", encoding="utf-8") as file:
                 file.write(f"{link} - Countries found: {', '.join(countries_found)}\n")
+            rewrite_text = rewrite_text_with_deepseek(article_content["text"])
+            if rewrite_text:
+                message = f"Для статьи {link} найдены страны: {', '.join(countries_found)}\n\n{rewrite_text}"
+                await notify_admins(message)
         else:
             main_logger.info(f"No countries found in {link}")
     else:
