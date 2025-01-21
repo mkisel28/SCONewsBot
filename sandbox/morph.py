@@ -1,9 +1,7 @@
 from pymorphy3 import MorphAnalyzer
 
-
 morph = MorphAnalyzer()
 
-# Список стран
 COUNTRIES = [
     "россия",
     "беларусь",
@@ -14,7 +12,7 @@ COUNTRIES = [
     "казахстан",
     "таджикистан",
     "киргизия",
-    "узбекистан"
+    "узбекистан",
 ]
 
 ADJECTIVE_TO_NOUN = {
@@ -35,21 +33,18 @@ ADJECTIVE_TO_NOUN = {
     "кнр": "китай",
 }
 
+
 def lemmatize_word(word):
     lemma = morph.parse(word)[0].normal_form
     return ADJECTIVE_TO_NOUN.get(lemma, lemma)
+
 
 def find_countries_in_text(text):
     words = text.lower().split()
     lemmatized_words = [lemmatize_word(word) for word in words]
 
     found_countries = [
-        country for country in COUNTRIES
-        if lemmatize_word(country) in lemmatized_words
+        country for country in COUNTRIES if lemmatize_word(country) in lemmatized_words
     ]
-    
+
     return found_countries
-
-
-
-
