@@ -1,0 +1,23 @@
+[project]
+name = "admin-panel"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "django>=5.1.5",
+    "psycopg[binary,pool]>=3.2.4",
+    "python-dotenv>=1.0.1",
+]
+
+[tool.ruff]
+exclude = ["**/.venv/**", "**/migrations/**"]
+lint.select = ["ALL"]
+lint.ignore = ["D203", "D213", "TC001", "ARG001", "S101"]
+line-length = 79
+
+[tool.ruff.lint.mccabe]
+max-complexity = 3
+
+[tool.black]
+line-length = 79

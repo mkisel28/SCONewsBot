@@ -9,8 +9,14 @@ from utils.http_utils import fetch_url
 main_logger, ai_logger = setup_logging()
 
 
-async def fetch_rss_links(client: httpx.AsyncClient, feed_url: str) -> list[str]:
-    """Fetch links from an RSS feed."""
+async def fetch_rss_links(
+    client: httpx.AsyncClient,
+    feed_url: str,
+) -> list[str]:
+    """Fetch links from an RSS feed.
+
+    :return: Список ссылок из RSS-ленты.
+    """
     response = await fetch_url(client, feed_url)
     if not response:
         return []

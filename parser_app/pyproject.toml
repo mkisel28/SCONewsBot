@@ -17,4 +17,19 @@ dependencies = [
   "wheel",
   "python-dotenv>=1.0.1",
   "openai>=1.59.9",
+  "asyncpg>=0.30.0",
+  "pydantic>=2.10.5",
+  "tortoise-orm>=0.24.0",
 ]
+
+[tool.ruff]
+exclude = ["**/.venv/**", "**/migrations/**", "**/sandbox/**"]
+lint.select = ["ALL"]
+lint.ignore = ["D203", "D213", "TC001", "ARG001", "S101", "TC002", "D100", "E501"]
+line-length = 79
+
+[tool.ruff.lint.mccabe]
+max-complexity = 4
+
+[tool.black]
+line-length = 79

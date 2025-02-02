@@ -43,8 +43,6 @@ def find_countries_in_text(text):
     words = text.lower().split()
     lemmatized_words = [lemmatize_word(word) for word in words]
 
-    found_countries = [
+    return [
         country for country in COUNTRIES if lemmatize_word(country) in lemmatized_words
     ]
-
-    return found_countries

@@ -1,12 +1,44 @@
 services:
+  web:
+    build:
+      context: admin_panel/
+      dockerfile: Dockerfile
+      target: dev
+    container_name: my_django_web
+    command: /app/entrypoint.sh
+    environment:
+      - PATH=/opt/.venv/bin:$PATH
+      - PYTHONPATH=/opt
+    working_dir: /app
+    volumes:
+      - ./admin_panel:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+      - .env
+
   sconewsbot:
     build:
-      context: .
+      context: parser_app/
       dockerfile: Dockerfile
       target: dev
     container_name: sconewsbot
     working_dir: /app
+    command: ["python", "src/main.py"]
+
+
+  db:
+    image: postgres:17
+    container_name: sco_db
+    restart: always
     environment:
-      - VIRTUAL_ENV=/app/.venv
-      - PATH=/app/.venv/bin:$PATH
-    command: ["python", "src/hello.py"]
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+volumes:
+  postgres_data:
