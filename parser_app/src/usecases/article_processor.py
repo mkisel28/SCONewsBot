@@ -45,7 +45,7 @@ class ArticleProcessor:
         if is_exists:
             return
 
-        msg=f"Processing article: {link}"
+        msg = f"Processing article: {link}"
         main_logger.info(msg)
 
         await self._article_repository.create_article(link=link, feed=feed)
@@ -68,7 +68,7 @@ class ArticleProcessor:
             main_logger.info(message)
             return
 
-        analysis_result  = await self._deepseek_service.analyze_with_deepseek(
+        analysis_result = await self._deepseek_service.analyze_with_deepseek(
             text,
         )
         if not analysis_result.success:
@@ -76,7 +76,7 @@ class ArticleProcessor:
                 f"*Возможная статья*\n\n"
                 f"*Ссылка:* {link}\n"
                 f"*Ошибка в работает DeepSeek:* {analysis_result.error_type}\n"
-                f"*Описание:* {analysis_result.error}"
+                f"*Описание:* {analysis_result.error}",
             )
             return
         if not analysis_result.result:
@@ -102,7 +102,9 @@ class ArticleProcessor:
             rewritten_text=rewrite_text,
         )
 
-        message = f"Найдены страны в статье {link}: {', '.join(countries_found)}"
+        message = (
+            f"Найдены страны в статье {link}: {', '.join(countries_found)}"
+        )
         main_logger.info(message)
         with open("processed_links.txt", "a", encoding="utf-8") as file:
             file.write(
@@ -135,6 +137,7 @@ class ArticleProcessor:
             "title": article.title,
             "text": article.text,
         }
+
     def _process_text(self, text: str) -> None | set[str]:
         """Обработка текста статьи."""
         words = self._text_processor.extract_words(text)

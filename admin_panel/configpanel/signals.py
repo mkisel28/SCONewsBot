@@ -175,15 +175,19 @@ INIT_FEEDS = [
     ("https://mid.ru/ru/rss.php", "rss"),
     ("https://russian.news.cn/ewjkxml.xml", "rss"),
     ("https://kzaif.kz/rss/all.php", "rss"),
-
     ("https://www.chinadaily.com.cn/rss/world_rss.xml", "rss"),
     ("http://www.xinhuanet.com/english/rss/worldrss.xml", "rss"),
     ("https://news.google.com/rss?hl=ru&gl=RU&ceid=RU:ru", "rss"),
     ("https://www.cgtn.com/subscribe/rss/section/world.xml", "rss"),
     ("https://www.cgtn.com/subscribe/rss/section/china.xml", "rss"),
-    ("https://news.google.com/rss/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNRFEzYkdvU0FuSjFLQUFQAQ?hl=ru&gl=RU&ceid=RU%3Aru&oc=11", "rss"),
-    ("https://news.google.com/rss/topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNREV6ZHpJM0VnSnlkU2dBUAE?hl=ru&gl=RU&ceid=RU%3Aru", "rss"),
-
+    (
+        "https://news.google.com/rss/topics/CAAqIQgKIhtDQkFTRGdvSUwyMHZNRFEzYkdvU0FuSjFLQUFQAQ?hl=ru&gl=RU&ceid=RU%3Aru&oc=11",
+        "rss",
+    ),
+    (
+        "https://news.google.com/rss/topics/CAAqIggKIhxDQkFTRHdvSkwyMHZNREV6ZHpJM0VnSnlkU2dBUAE?hl=ru&gl=RU&ceid=RU%3Aru",
+        "rss",
+    ),
 ]
 INIT_TELEGRAM_ADMINS = [1689568914]
 INIT_BOT_TOKEN = "7588219119:AAFj4XFsXxuHDnbC04jflabWQEITvE8QGB4"

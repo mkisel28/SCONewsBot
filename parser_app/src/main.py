@@ -3,7 +3,6 @@ import asyncio
 import httpx
 
 from config.db import init_db
-from config.logging import setup_logging
 from config.settings import PARSER_CONFIG
 from repositories.article_repository import ArticleRepository
 from repositories.data_repository import DatabaseDataRepository
@@ -13,12 +12,10 @@ from services.text_processor_service import TextProcessorService
 from usecases.article_processor import ArticleProcessor
 from usecases.rss_processor import RssProcessor
 
-main_logger, ai_logger = setup_logging()
-
 
 async def process() -> None:
     data_repo = DatabaseDataRepository()
-
+    feed_urls = await data_repo.get_feeds()
     deepseek_service = DeepSeekService()
     text_processor = TextProcessorService(
         countries=await data_repo.get_countries(),

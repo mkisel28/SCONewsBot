@@ -31,14 +31,14 @@ def retry_async(  # noqa: C901
                     if attempt < retries:
                         if logger:
                             logger.warning(
-                                f"Attempt {attempt} failed for {func.__name__} with error: {e}. "
+                                f"Attempt {attempt} failed for {func.__name__} args = {args}, kwargs ={kwargs} with error: {e}. "
                                 f"Retrying in {delay} seconds...",
                             )
                         await asyncio.sleep(delay)
                     else:
                         if logger:
                             logger.exception(
-                                f"Final attempt {attempt} failed for {func.__name__} with error: {e}. "
+                                f"Final attempt {attempt} failed for {func.__name__} args = {args}, kwargs ={kwargs} with error: {e}. "
                                 f"Returning default value: {default}",
                             )
                         return default

@@ -36,6 +36,7 @@ class DataRepository:
 
 class DatabaseDataRepository(DataRepository):
     """Реализация репозитория для получения данных из базы посредством Tortoise ORM.
+
     Методы реализованы асинхронно.
     """
 
@@ -56,6 +57,8 @@ class DatabaseDataRepository(DataRepository):
         return [w if isinstance(w, str) else w[0] for w in stop_words]
 
     async def get_feeds(self) -> list[Feed]:
+        for feed in await Feed.all():
+            print(feed.feed_url)
         return await Feed.all()
 
     async def get_admin_ids(self) -> list[int]:

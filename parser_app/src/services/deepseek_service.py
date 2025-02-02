@@ -38,12 +38,16 @@ class DeepSeekService:
             )
 
             result = json.loads(response.choices[0].message.content)  # type: ignore
-            return DeepSeekResult(success=True, result=result.get("result", False))
+            return DeepSeekResult(
+                success=True, result=result.get("result", False)
+            )
         except Exception as e:
             main_logger.exception(
                 f"Error processing text with DeepSeek (analyze): {e}",
             )
-            return DeepSeekResult(success=False, error=str(e), error_type=type(e).__name__)
+            return DeepSeekResult(
+                success=False, error=str(e), error_type=type(e).__name__
+            )
 
     async def rewrite_text_with_deepseek(self, text: str) -> str:
         """Переформулирует текст c помощью DeepSeek."""
