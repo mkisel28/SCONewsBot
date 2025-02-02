@@ -79,5 +79,4 @@ class DeepSeekService:
                 f"No active prompt found for type: {prompt_type}",
             )
             raise ValueError(f"No active prompt found for type: {prompt_type}")
-        print(prompt.content)
         return prompt.content
