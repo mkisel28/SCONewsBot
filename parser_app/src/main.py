@@ -15,10 +15,7 @@ from usecases.rss_processor import RssProcessor
 
 main_logger, ai_logger = setup_logging()
 
-
-async def main() -> None:
-    await init_db()
-
+async def process() -> None:
     data_repo = DatabaseDataRepository()
 
     deepseek_service = DeepSeekService()
@@ -46,10 +43,22 @@ async def main() -> None:
         )
 
         rss_processor = RssProcessor(client, article_processor, batch_size=5)
+
         feed_urls = await data_repo.get_feeds()
 
         await rss_processor.process_feeds(feed_urls)
 
+async def main() -> None:
+    await init_db()
+
+    while True:
+        await process()
+        await asyncio.sleep(60)
+
+
 
 if __name__ == "__main__":
-    asyncio.run(main())
+    try:
+        asyncio.run(main())
+    except Exception as e:
+        print(e)

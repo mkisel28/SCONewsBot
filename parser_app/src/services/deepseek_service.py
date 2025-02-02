@@ -16,7 +16,7 @@ class DeepSeekService:
     Отвечает только за взаимодействие с внешним API: анализ и переформулирование.
     """
 
-    def __init__(self):
+    def __init__(self) -> None:
         self._client = OpenAI(
             api_key=DEEPSEEK_API_KEY,
             base_url="https://api.deepseek.com",
@@ -73,9 +73,10 @@ class DeepSeekService:
         """
         try:
             prompt = await Prompt.get(prompt_type=prompt_type, is_active=True)
-            return prompt.content
         except DoesNotExist:
             main_logger.error(
                 f"No active prompt found for type: {prompt_type}",
             )
             raise ValueError(f"No active prompt found for type: {prompt_type}")
+        print(prompt.content)
+        return prompt.content

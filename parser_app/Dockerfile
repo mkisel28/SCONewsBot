@@ -9,14 +9,15 @@ RUN apt-get update && \
 
 COPY pyproject.toml \
     uv.lock ./
-    
-ENV PATH="/app/.venv/bin:$PATH"
+
 
 FROM builder AS dev
 
+ENV UV_PROJECT_ENVIRONMENT=/opt/.venv/
+ENV PATH="/opt/.venv/bin:$PATH"
+
 RUN --mount=from=ghcr.io/astral-sh/uv,source=/uv,target=/bin/uv \
     uv sync --frozen --extra dev
-
 
 COPY . /app
 

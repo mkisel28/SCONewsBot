@@ -11,7 +11,6 @@ COPY pyproject.toml \
     uv.lock ./
 
 
-
 FROM builder AS dev
 
 ENV UV_PROJECT_ENVIRONMENT=/opt/.venv/

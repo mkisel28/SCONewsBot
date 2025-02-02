@@ -11,11 +11,12 @@ main_logger, ai_logger = setup_logging()
 class TelegramNotifierService:
     """Сервис для отправки уведомлений админам в Telegram."""
 
-    def __init__(self, bot_token: str, admin_ids: list[int]):
+    def __init__(self, bot_token: str, admin_ids: list[int]) -> None:
+        """Инициализация сервиса для отправки уведомлений админам в Telegram."""
         self._bot_token = bot_token
         self._admin_ids = admin_ids
 
-    async def notify_admins(self, message: str):
+    async def notify_admins(self, message: str) -> None:
         """Асинхронная отправка уведомления всем администраторам в Telegram.
 
         :param message: Текст сообщения, который будет отправлен администраторам.
