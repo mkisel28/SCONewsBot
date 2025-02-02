@@ -15,6 +15,7 @@ from usecases.rss_processor import RssProcessor
 
 main_logger, ai_logger = setup_logging()
 
+
 async def process() -> None:
     data_repo = DatabaseDataRepository()
 
@@ -48,17 +49,17 @@ async def process() -> None:
 
         await rss_processor.process_feeds(feed_urls)
 
+
 async def main() -> None:
     await init_db()
 
     while True:
-        await process()
-        await asyncio.sleep(60)
-
+        try:
+            await process()
+            await asyncio.sleep(60)
+        except Exception:
+            await asyncio.sleep(120)
 
 
 if __name__ == "__main__":
-    try:
-        asyncio.run(main())
-    except Exception as e:
-        print(e)
+    asyncio.run(main())
