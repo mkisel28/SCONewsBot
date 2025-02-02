@@ -45,7 +45,9 @@ class ArticleProcessor:
         if is_exists:
             return
 
-        main_logger.info(f"Processing article: {link}")
+        msg=f"Processing article: {link}"
+        main_logger.info(msg)
+
         await self._article_repository.create_article(link=link, feed=feed)
 
         response = await fetch_url(self._client, link)
@@ -54,27 +56,32 @@ class ArticleProcessor:
 
         article_content = self._parse_article(link, response.text)
         if not article_content or not article_content.get("text"):
-            main_logger.error(
-                f"Failed to parse article or no content found for {link}",
-            )
+            message = "Ошибка при парсинге статьи или не найден контент."
+            main_logger.error(message)
             return
 
         text = article_content["text"]
 
         countries_found = self._process_text(text)
         if not countries_found:
-            main_logger.info(
-                f"No interesting countries found or stop words exist in {link}",
-            )
+            message = f"Статья {link} не прошла проверку на интересные страны или стоп-слова."
+            main_logger.info(message)
             return
 
-        is_sco_related = await self._deepseek_service.analyze_with_deepseek(
+        analysis_result  = await self._deepseek_service.analyze_with_deepseek(
             text,
         )
-        if not is_sco_related:
-            main_logger.info(
-                f"Article {link} is not SCO related by DeepSeek analysis.",
+        if not analysis_result.success:
+            await self._telegram_notifier.notify_admins(
+                f"*Возможная статья*\n\n"
+                f"*Ссылка:* {link}\n"
+                f"*Ошибка в работает DeepSeek:* {analysis_result.error_type}\n"
+                f"*Описание:* {analysis_result.error}"
             )
+            return
+        if not analysis_result.result:
+            message = f"Статья {link} не прошла проверку на SCO по DeepSeek."
+            main_logger.info(message)
             return
 
         await self._article_repository.update_article_texts(
@@ -86,7 +93,8 @@ class ArticleProcessor:
             text,
         )
         if not rewrite_text:
-            main_logger.info(f"Rewrite result is empty for {link}")
+            message = f"Статья {link} не прошла проверку на переформулировку по DeepSeek."
+            main_logger.info(message)
             return
 
         await self._article_repository.update_article_texts(
@@ -94,9 +102,8 @@ class ArticleProcessor:
             rewritten_text=rewrite_text,
         )
 
-        main_logger.info(
-            f"Found countries in {link}: {', '.join(countries_found)}",
-        )
+        message = f"Найдены страны в статье {link}: {', '.join(countries_found)}"
+        main_logger.info(message)
         with open("processed_links.txt", "a", encoding="utf-8") as file:
             file.write(
                 f"{link} - Countries found: {', '.join(countries_found)}\n",
@@ -120,14 +127,14 @@ class ArticleProcessor:
             )
             article.download(input_html=html_content, ignore_read_more=True)
             article.parse()
-            return {
-                "title": article.title,
-                "text": article.text,
-            }
         except Exception as e:
-            main_logger.exception(f"Error parsing article {url}: {e}")
+            message = f"Ошибка при парсинге статьи {url}: {e}"
+            main_logger.exception(message)
             return None
-
+        return {
+            "title": article.title,
+            "text": article.text,
+        }
     def _process_text(self, text: str) -> None | set[str]:
         """Обработка текста статьи."""
         words = self._text_processor.extract_words(text)

@@ -6,14 +6,15 @@ from tortoise.exceptions import DoesNotExist
 from config.logging import setup_logging
 from config.settings import DEEPSEEK_API_KEY
 from domain.models import Prompt
+from schemas.deepseek import DeepSeekResult
 
 main_logger, ai_logger = setup_logging()
 
 
 class DeepSeekService:
-    """Сервис для работы с DeepSeek API.
+    """Сервис для работы c DeepSeek API.
 
-    Отвечает только за взаимодействие с внешним API: анализ и переформулирование.
+    Отвечает только за взаимодействие c внешним API: анализ и переформулирование.
     """
 
     def __init__(self) -> None:
@@ -22,8 +23,8 @@ class DeepSeekService:
             base_url="https://api.deepseek.com",
         )
 
-    async def analyze_with_deepseek(self, text: str) -> bool:
-        """Анализирует текст с помощью DeepSeek, определяя, относится ли он к ШОС."""
+    async def analyze_with_deepseek(self, text: str) -> DeepSeekResult:
+        """Анализирует текст c помощью DeepSeek, определяя, относится ли он к ШОС."""
         try:
             analysis_prompt = await self._get_prompt_from_db("analysis")
             response = self._client.chat.completions.create(
@@ -37,15 +38,15 @@ class DeepSeekService:
             )
 
             result = json.loads(response.choices[0].message.content)  # type: ignore
-            return result.get("result", False)
+            return DeepSeekResult(success=True, result=result.get("result", False))
         except Exception as e:
             main_logger.exception(
                 f"Error processing text with DeepSeek (analyze): {e}",
             )
-            return False
+            return DeepSeekResult(success=False, error=str(e), error_type=type(e).__name__)
 
     async def rewrite_text_with_deepseek(self, text: str) -> str:
-        """Переформулирует текст с помощью DeepSeek."""
+        """Переформулирует текст c помощью DeepSeek."""
         try:
             rewrite_prompt = await self._get_prompt_from_db("rewrite")
             response = self._client.chat.completions.create(
