@@ -10,6 +10,7 @@ services:
       - PATH=/opt/.venv/bin:$PATH
       - PYTHONPATH=/opt
     working_dir: /app
+    restart: always
     volumes:
       - ./admin_panel:/app
     ports:
@@ -25,6 +26,7 @@ services:
       dockerfile: Dockerfile
       target: dev
     container_name: sconewsbot
+    restart: always
     environment:
       - PATH=/opt/.venv/bin:$PATH
       - PYTHONPATH=/opt
