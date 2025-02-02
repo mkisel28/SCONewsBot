@@ -59,17 +59,6 @@ async def fetch_url(
     return response
 
 
-@retry_async(
-    retries=3,
-    delay=2.0,
-    errors=(
-        httpx.RequestError,
-        httpx.HTTPStatusError,
-        httpx.RemoteProtocolError,
-    ),
-    default=False,
-    logger=main_logger,
-)
 async def post_request(
     client: httpx.AsyncClient,
     url: str,
