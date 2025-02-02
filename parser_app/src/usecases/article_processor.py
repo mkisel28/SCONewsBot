@@ -38,7 +38,7 @@ class ArticleProcessor:
         self._article_repository = article_repository
         self._parser_config = parser_config
 
-    async def process_article_link(self, link: str, feed: Feed) -> None: # noqa C901
+    async def process_article_link(self, link: str, feed: Feed) -> None:  # noqa C901
         """Обработка одной статьи."""
         is_exists = await self._article_repository.exists_by_link(link)
         if is_exists:

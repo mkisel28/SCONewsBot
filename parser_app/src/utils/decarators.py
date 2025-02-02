@@ -4,7 +4,7 @@ from functools import wraps
 from typing import Any
 
 
-def retry_async( # noqa: C901
+def retry_async(  # noqa: C901
     *,
     retries: int = 3,
     delay: float = 2.0,
@@ -23,7 +23,7 @@ def retry_async( # noqa: C901
 
     def decorator(func: Callable) -> Callable:
         @wraps(func)
-        async def wrapper(*args, **kwargs) -> Any | None: # noqa: C901
+        async def wrapper(*args, **kwargs) -> Any | None:  # noqa: C901
             for attempt in range(1, retries + 1):
                 try:
                     return await func(*args, **kwargs)
