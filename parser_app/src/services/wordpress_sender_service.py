@@ -2,6 +2,7 @@ import json
 import re
 
 import httpx
+from httpx import BasicAuth
 
 from config.logging import setup_logging
 from utils.http_utils import post_request
@@ -47,7 +48,7 @@ class WordPressPostService:
             payload["categories"] = json.dumps([category_id])
 
         async with httpx.AsyncClient(
-            auth=(self._username, self._app_password),
+            auth=BasicAuth(self._username, self._app_password),
         ) as client:
             if await post_request(client, self._api_endpoint, payload):
                 wp_logger.info("Пост успешно создан")

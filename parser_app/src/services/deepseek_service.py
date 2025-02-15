@@ -72,14 +72,18 @@ class DeepSeekService:
             result = json.loads(raw_response)  # type: ignore
             return DeepSeekRewriteResult(
                 success=True,
-                result=result.get("result", ""),
+                text=result.get("result", ""),
                 title=result.get("title", ""),
             )
         except Exception as e:
             main_logger.exception(
                 f"Error processing text with DeepSeek (rewrite): {e}",
             )
-            return ""
+            return DeepSeekRewriteResult(
+                success=False,
+                error=str(e),
+                error_type=type(e).__name__,
+            )
 
     async def _get_prompt_from_db(self, prompt_type: str) -> str:
         """Загружает активный промпт из базы данных по заданному типу ('analysis' или 'rewrite').
