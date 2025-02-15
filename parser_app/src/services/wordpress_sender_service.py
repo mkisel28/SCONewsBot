@@ -43,6 +43,7 @@ class WordPressPostService:
             "title": title,
             "content": formatted_content,
             "status": "draft" if title is None else "publish",
+            "categories": [],
         }
         if category_id is not None:
             payload["categories"] = json.dumps([category_id])
