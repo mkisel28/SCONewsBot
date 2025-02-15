@@ -3,12 +3,18 @@ import asyncio
 import httpx
 
 from config.db import init_db
-from config.settings import PARSER_CONFIG
+from config.settings import (
+    PARSER_CONFIG,
+    WORDPRESS_APP_PASSWORD,
+    WORDPRESS_URL,
+    WORDPRESS_USERNAME,
+)
 from repositories.article_repository import ArticleRepository
 from repositories.data_repository import DatabaseDataRepository
 from services.deepseek_service import DeepSeekService
 from services.telegram_notifier_service import TelegramNotifierService
 from services.text_processor_service import TextProcessorService
+from services.wordpress_sender_service import WordPressPostService
 from usecases.article_processor import ArticleProcessor
 from usecases.rss_processor import RssProcessor
 
@@ -27,7 +33,11 @@ async def process() -> None:
         bot_token=await data_repo.get_telegram_bot_token(),
         admin_ids=await data_repo.get_admin_ids(),
     )
-
+    wordpress_sender = WordPressPostService(
+        wp_url=WORDPRESS_URL,
+        username=WORDPRESS_USERNAME,
+        app_password=WORDPRESS_APP_PASSWORD,
+    )
     article_repository = ArticleRepository()
 
     async with httpx.AsyncClient() as client:
@@ -36,6 +46,7 @@ async def process() -> None:
             text_processor=text_processor,
             deepseek_service=deepseek_service,
             telegram_notifier=telegram_notifier,
+            wordpress_sender=wordpress_sender,
             article_repository=article_repository,
             parser_config=PARSER_CONFIG,
         )

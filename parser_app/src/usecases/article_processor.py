@@ -7,6 +7,7 @@ from repositories.article_repository import ArticleRepository
 from services.deepseek_service import DeepSeekService
 from services.telegram_notifier_service import TelegramNotifierService
 from services.text_processor_service import TextProcessorService
+from services.wordpress_sender_service import WordPressPostService
 from utils.http_utils import fetch_url
 
 main_logger, ai_logger = setup_logging()
@@ -28,6 +29,7 @@ class ArticleProcessor:
         text_processor: TextProcessorService,
         deepseek_service: DeepSeekService,
         telegram_notifier: TelegramNotifierService,
+        wordpress_sender: WordPressPostService,
         article_repository: ArticleRepository,
         parser_config,
     ) -> None:
@@ -36,6 +38,7 @@ class ArticleProcessor:
         self._text_processor = text_processor
         self._deepseek_service = deepseek_service
         self._telegram_notifier = telegram_notifier
+        self._wordpress_sender = wordpress_sender
         self._article_repository = article_repository
         self._parser_config = parser_config
 
@@ -89,17 +92,19 @@ class ArticleProcessor:
             original_text=text,
         )
 
-        rewrite_text = await self._deepseek_service.rewrite_text_with_deepseek(
-            text,
+        deepseek_rewrite_result = (
+            await self._deepseek_service.rewrite_text_with_deepseek(
+                text,
+            )
         )
-        if not rewrite_text:
+        if not deepseek_rewrite_result.text:
             message = f"Статья {link} не прошла проверку на переформулировку по DeepSeek."
             main_logger.info(message)
             return
 
         await self._article_repository.update_article_texts(
             link=link,
-            rewritten_text=rewrite_text,
+            rewritten_text=deepseek_rewrite_result.text,
         )
 
         message = (
@@ -111,8 +116,13 @@ class ArticleProcessor:
                 f"{link} - Countries found: {', '.join(countries_found)}\n",
             )
 
-        message = f"Для статьи {link} найдены страны: {', '.join(countries_found)}\n\n{rewrite_text}"
+        message = f"Для статьи {link} найдены страны: {', '.join(countries_found)}\n\n{deepseek_rewrite_result.text}"
         await self._telegram_notifier.notify_admins(message)
+        await self._wordpress_sender.create_post(
+            title=deepseek_rewrite_result.title,
+            content=deepseek_rewrite_result.text,
+            category_id=None,
+        )
 
     def _parse_article(
         self,

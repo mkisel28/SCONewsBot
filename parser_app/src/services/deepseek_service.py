@@ -6,7 +6,7 @@ from tortoise.exceptions import DoesNotExist
 from config.logging import setup_logging
 from config.settings import DEEPSEEK_API_KEY
 from domain.models import Prompt
-from schemas.deepseek import DeepSeekResult
+from schemas.deepseek import DeepSeekResult, DeepSeekRewriteResult
 
 main_logger, ai_logger = setup_logging()
 
@@ -39,17 +39,23 @@ class DeepSeekService:
 
             result = json.loads(response.choices[0].message.content)  # type: ignore
             return DeepSeekResult(
-                success=True, result=result.get("result", False)
+                success=True,
+                result=result.get("result", False),
             )
         except Exception as e:
             main_logger.exception(
                 f"Error processing text with DeepSeek (analyze): {e}",
             )
             return DeepSeekResult(
-                success=False, error=str(e), error_type=type(e).__name__
+                success=False,
+                error=str(e),
+                error_type=type(e).__name__,
             )
 
-    async def rewrite_text_with_deepseek(self, text: str) -> str:
+    async def rewrite_text_with_deepseek(
+        self,
+        text: str,
+    ) -> DeepSeekRewriteResult:
         """Переформулирует текст c помощью DeepSeek."""
         try:
             rewrite_prompt = await self._get_prompt_from_db("rewrite")
@@ -64,7 +70,11 @@ class DeepSeekService:
             )
             raw_response = response.choices[0].message.content
             result = json.loads(raw_response)  # type: ignore
-            return result.get("result", "")
+            return DeepSeekRewriteResult(
+                success=True,
+                result=result.get("result", ""),
+                title=result.get("title", ""),
+            )
         except Exception as e:
             main_logger.exception(
                 f"Error processing text with DeepSeek (rewrite): {e}",
