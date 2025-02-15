@@ -34,7 +34,8 @@ services:
       - ./parser_app:/app
     working_dir: /app
     command: ["python", "src/main.py"]
-
+    env_file:
+      - .env
 
   db:
     image: postgres:17
