@@ -65,9 +65,10 @@ class StopWordAdmin(admin.ModelAdmin):
 
 @admin.register(Feed)
 class FeedAdmin(admin.ModelAdmin):
-    list_display = ("id", "feed_url", "feed_type")
+    list_display = ("id", "is_active", "feed_url", "feed_type")
     search_fields = ("feed_url",)
-    list_filter = ("feed_type",)
+    list_filter = ("feed_type", "is_active")
+    list_editable = ("is_active",)
 
 
 @admin.register(TelegramAdmin)
