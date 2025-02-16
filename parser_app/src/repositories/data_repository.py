@@ -57,9 +57,7 @@ class DatabaseDataRepository(DataRepository):
         return [w if isinstance(w, str) else w[0] for w in stop_words]
 
     async def get_feeds(self) -> list[Feed]:
-        for feed in await Feed.all():
-            print(feed.feed_url)
-        return await Feed.all()
+        return await Feed.filter(is_active=True).all()
 
     async def get_admin_ids(self) -> list[int]:
         admin_ids = await TelegramAdmin.all().values_list(

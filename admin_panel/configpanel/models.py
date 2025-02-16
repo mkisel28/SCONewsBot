@@ -58,7 +58,7 @@ class Keyword(models.Model):
         verbose_name = "Ключевое слово"
         verbose_name_plural = "Ключевые слова"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.word
 
 
@@ -76,7 +76,7 @@ class StopWord(models.Model):
         verbose_name = "Стоп-слово"
         verbose_name_plural = "Стоп-слова"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.word
 
 
@@ -99,12 +99,17 @@ class Feed(models.Model):
         verbose_name="Тип источника",
         help_text="Выберите тип источника: RSS или Sitemap",
     )
+    is_active = models.BooleanField(
+        default=True,
+        verbose_name="Активен",
+        help_text="Доступен ли источник для парсинга",
+    )
 
     class Meta:
         verbose_name = "Источник"
         verbose_name_plural = "Источники"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.feed_url}"
 
 
@@ -121,7 +126,7 @@ class TelegramAdmin(models.Model):
         verbose_name = "Telegram администратор"
         verbose_name_plural = "Telegram администраторы"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return str(self.telegram_id)
 
 
@@ -197,6 +202,7 @@ class NewsArticle(models.Model):
 
 class Prompt(models.Model):
     """Хранит промпты для взаимодействия с AI-сервисами.
+
     Типы промптов:
     - analysis: промпт для анализа текста (например, относится ли статья к ШОС)
     - rewrite: промпт для переформулирования текста

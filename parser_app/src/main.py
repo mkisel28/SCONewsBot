@@ -20,8 +20,8 @@ from usecases.rss_processor import RssProcessor
 
 
 async def process() -> None:
+    """Обработка новых статей."""
     data_repo = DatabaseDataRepository()
-    feed_urls = await data_repo.get_feeds()
     deepseek_service = DeepSeekService()
     text_processor = TextProcessorService(
         countries=await data_repo.get_countries(),
@@ -59,6 +59,7 @@ async def process() -> None:
 
 
 async def main() -> None:
+    """Точка входа."""
     await init_db()
 
     while True:

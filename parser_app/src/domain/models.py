@@ -42,7 +42,7 @@ class Feed(models.Model):
     id = fields.IntField(pk=True)
     feed_url = fields.CharField(max_length=255, unique=True)
     feed_type = fields.CharField(max_length=10, default="rss")
-    # В Django определяются choices, здесь можно (при необходимости) реализовать через Enum.
+    is_active = fields.BooleanField(default=True)
 
     class Meta:
         table = "configpanel_feed"
